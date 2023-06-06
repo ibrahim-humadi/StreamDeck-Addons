@@ -1,4 +1,5 @@
 // DAZ Studio version 4.21.0.5 filetype DAZ Script
+//Methods and vars taken from http://docs.daz3d.com/doku.php/public/software/dazstudio/4/referenceguide/scripting/api_reference/samples/actions/action_custom_create/start
 
 (function(){
 	/*********************************************************************/
