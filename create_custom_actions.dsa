@@ -1,0 +1,160 @@
+// DAZ Studio version 4.21.0.5 filetype DAZ Script
+
+(function(){
+	/*********************************************************************/
+	// Boolean : Function for testing if a file exists on disk
+	function fileExists( sFilePath )
+	{
+		// Create a file info object
+		var oFileInfo = new DzFileInfo( sFilePath );
+		// Get whether or not the file exists
+		var bExists = oFileInfo.exists();
+		// Do not leak memory
+		oFileInfo.deleteLater();
+		// Return the answer
+		return bExists;
+	};
+	
+	/*********************************************************************/
+	// String : Function for creating a custom action
+	function createCustomAction( sActionText, sActionDesc, sActionFilePath, sActionIconPath, bUpdate )
+	{
+		// Get the action manager
+		var oActionMgr = MainWindow.getActionMgr();
+		
+		// Declare working variables
+		var sName, sText, sDesc, sFile, sIcon;
+		
+		// Initialize
+		var bFound = false;
+		
+		// Iterate over all custom actions
+		for( var i = 0, nActions = oActionMgr.getNumCustomActions(); i < nActions; i += 1 ){
+			// Get 'current' custom action information
+			sName = oActionMgr.getCustomActionName( i );
+			sText = oActionMgr.getCustomActionText( i );
+			sDesc = oActionMgr.getCustomActionDesc( i );
+			sFile = oActionMgr.getCustomActionFile( i );
+			sIcon = oActionMgr.getCustomActionIcon( i );
+			
+			// If the file is the one we are looking for
+			if( sFile == sActionFilePath ){
+				// Update our flag
+				bFound = true;
+				
+				// If we are updating
+				if( bUpdate ){
+					// If the text is not what we are looking for
+					if( sText != sActionText ){
+						// Update it
+						oActionMgr.setCustomActionText( i, sActionText );
+					}
+					
+					// If the description is not what we are looking for
+					if( sDesc != sActionDesc ){
+						// Update it
+						oActionMgr.setCustomActionDesc( i, sActionDesc );
+					}
+					
+					// If an icon path is passed in
+					if( !sActionIconPath.isEmpty() && sIcon != sActionIconPath ){
+						// If the file exists
+						if( fileExists( sActionIconPath ) ){
+							// Update it
+							oActionMgr.setCustomActionIcon( i, sActionIconPath );
+						}
+					}
+				}
+				
+				// Return the name of the action
+				return sName;
+			}
+		}
+		
+		// If the custom action was not found or if bUpdate is true
+		if( !bFound || bUpdate ){
+			// If the file exists
+			if( fileExists( sActionFilePath ) ){
+				// If an icon path is passed in
+				if( !sActionIconPath.isEmpty() ){
+					// If the file does not exist
+					if( !fileExists( sActionIconPath ) ){
+						// Update it
+						sActionIconPath = "";
+					}
+				}
+				
+				// Add the custom action and return the name
+				return oActionMgr.addCustomAction(
+								sActionText,
+								sActionDesc,
+								sActionFilePath,
+								true,
+								"",
+								sActionIconPath );
+			}
+		}
+		return "";
+	};
+	
+	// Get current directory that this script is located
+	var oCurrentDirectory = new DzDir(new DzFileInfo(getScriptFileName()).path());
+	var sFilePath = oCurrentDirectory.filePath('streamdeck_rotate_x_minus.dsa');
+	
+	// X
+	var sActionText = "Streamdeck_rotate_x_minus";
+	var sActionDesc = "Negatively rotate X";
+	var sActionFilePath = String(oCurrentDirectory.filePath('streamdeck_rotate_x_minus.dsa'));
+	var sActionIconPath = String(oCurrentDirectory.filePath('minus.png'));
+	var sActionName = createCustomAction(sActionText, sActionDesc, sActionFilePath, sActionIconPath, true);
+	
+	sActionText = "Streamdeck_rotate_x_plus";
+	sActionDesc = "Positively rotate X";
+	sActionFilePath = String(oCurrentDirectory.filePath('streamdeck_rotate_x_plus.dsa'));
+	sActionIconPath = String(oCurrentDirectory.filePath('plus.png'));
+	sActionName = createCustomAction(sActionText, sActionDesc, sActionFilePath, sActionIconPath, true);
+	
+	sActionText = "Streamdeck_rotate_x_reset_to_default";
+	sActionDesc = "Reset rotate X to default Value";
+	sActionFilePath = String(oCurrentDirectory.filePath('streamdeck_rotate_x_reset_to_default.dsa'));
+	sActionIconPath = String(oCurrentDirectory.filePath('reset.png'));
+	sActionName = createCustomAction(sActionText, sActionDesc, sActionFilePath, sActionIconPath, true);
+
+	// Y	
+	sActionText = "Streamdeck_rotate_y_minus";
+	sActionDesc = "Negatively rotate Y";
+	sActionFilePath = String(oCurrentDirectory.filePath('streamdeck_rotate_y_minus.dsa'));
+	sActionIconPath = String(oCurrentDirectory.filePath('minus.png'));
+	sActionName = createCustomAction(sActionText, sActionDesc, sActionFilePath, sActionIconPath, true);
+	
+	sActionText = "Streamdeck_rotate_y_plus";
+	sActionDesc = "Positively rotate Y";
+	sActionFilePath = String(oCurrentDirectory.filePath('streamdeck_rotate_y_plus.dsa'));
+	sActionIconPath = String(oCurrentDirectory.filePath('plus.png'));
+	sActionName = createCustomAction(sActionText, sActionDesc, sActionFilePath, sActionIconPath, true);
+	
+	sActionText = "Streamdeck_rotate_y_reset_to_default";
+	sActionDesc = "Reset rotate Y to default Value";
+	sActionFilePath = String(oCurrentDirectory.filePath('streamdeck_rotate_y_reset_to_default.dsa'));
+	sActionIconPath = String(oCurrentDirectory.filePath('reset.png'));
+	sActionName = createCustomAction(sActionText, sActionDesc, sActionFilePath, sActionIconPath, true);
+
+	// Z	
+	sActionText = "Streamdeck_rotate_z_minus";
+	sActionDesc = "Negatively rotate Z";
+	sActionFilePath = String(oCurrentDirectory.filePath('streamdeck_rotate_z_minus.dsa'));
+	sActionIconPath = String(oCurrentDirectory.filePath('minus.png'));
+	sActionName = createCustomAction(sActionText, sActionDesc, sActionFilePath, sActionIconPath, true);
+	
+	sActionText = "Streamdeck_rotate_z_plus";
+	sActionDesc = "Positively rotate Z";
+	sActionFilePath = String(oCurrentDirectory.filePath('streamdeck_rotate_z_plus.dsa'));
+	sActionIconPath = String(oCurrentDirectory.filePath('plus.png'));
+	sActionName = createCustomAction(sActionText, sActionDesc, sActionFilePath, sActionIconPath, true);
+	
+	sActionText = "Streamdeck_rotate_z_reset_to_default";
+	sActionDesc = "Reset rotate Z to default Value";
+	sActionFilePath = String(oCurrentDirectory.filePath('streamdeck_rotate_z_reset_to_default.dsa'));
+	sActionIconPath = String(oCurrentDirectory.filePath('reset.png'));
+	sActionName = createCustomAction(sActionText, sActionDesc, sActionFilePath, sActionIconPath, true);
+})();
