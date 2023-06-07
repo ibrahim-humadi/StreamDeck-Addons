@@ -1,0 +1,14 @@
+// DAZ Studio version 4.21.0.5 filetype DAZ Script
+var oAction;
+var oMgr = MainWindow.getActionMgr();
+var str
+var n = oMgr.getNumCustomActions();
+// loop through all custom actions
+for (var i = n - 1; i >= 0; i--) {
+    oAction = oMgr.getCustomActionByIndex(i);
+    str = oMgr.getCustomActionFile(i);
+    //if the script belongs to the Addon then remove it.
+    if (str.indexOf("Streamdeck Addons") !== -1) {
+        oMgr.removeCustomAction(i);
+    }
+}
