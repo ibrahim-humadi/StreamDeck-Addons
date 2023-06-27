@@ -140,7 +140,26 @@
 	sActionIconPath = String(oCurrentDirectory.filePath('reset.png'));
 	sActionName = createCustomAction(sActionText, sActionDesc, sActionFilePath, sActionIconPath, true);
 
-	// Y	
+	// X Translate
+	sActionText = "Streamdeck_translate_x_minus";
+	sActionDesc = "Negatively translate X";
+	sActionFilePath = String(oCurrentDirectory.filePath('streamdeck_translate_x_minus.dsa'));
+	sActionIconPath = String(oCurrentDirectory.filePath('minus.png'));
+	sActionName = createCustomAction(sActionText, sActionDesc, sActionFilePath, sActionIconPath, true);
+
+	sActionText = "Streamdeck_translate_x_plus";
+	sActionDesc = "Positively translate X";
+	sActionFilePath = String(oCurrentDirectory.filePath('streamdeck_translate_x_plus.dsa'));
+	sActionIconPath = String(oCurrentDirectory.filePath('plus.png'));
+	sActionName = createCustomAction(sActionText, sActionDesc, sActionFilePath, sActionIconPath, true);
+
+	sActionText = "Streamdeck_translate_x_reset_to_default";
+	sActionDesc = "Reset translate X to default Value";
+	sActionFilePath = String(oCurrentDirectory.filePath('streamdeck_translate_x_reset_to_default.dsa'));
+	sActionIconPath = String(oCurrentDirectory.filePath('reset.png'));
+	sActionName = createCustomAction(sActionText, sActionDesc, sActionFilePath, sActionIconPath, true);
+
+	// Y Rotate
 	sActionText = "Streamdeck_rotate_y_minus";
 	sActionDesc = "Negatively rotate Y";
 	sActionFilePath = String(oCurrentDirectory.filePath('streamdeck_rotate_y_minus.dsa'));
@@ -178,7 +197,26 @@
 	sActionIconPath = String(oCurrentDirectory.filePath('reset.png'));
 	sActionName = createCustomAction(sActionText, sActionDesc, sActionFilePath, sActionIconPath, true);
 
-	// Z	
+	// Y Translate
+	sActionText = "Streamdeck_translate_y_minus";
+	sActionDesc = "Negatively translate Y";
+	sActionFilePath = String(oCurrentDirectory.filePath('streamdeck_translate_y_minus.dsa'));
+	sActionIconPath = String(oCurrentDirectory.filePath('minus.png'));
+	sActionName = createCustomAction(sActionText, sActionDesc, sActionFilePath, sActionIconPath, true);
+
+	sActionText = "Streamdeck_translate_y_plus";
+	sActionDesc = "Positively translate Y";
+	sActionFilePath = String(oCurrentDirectory.filePath('streamdeck_translate_y_plus.dsa'));
+	sActionIconPath = String(oCurrentDirectory.filePath('plus.png'));
+	sActionName = createCustomAction(sActionText, sActionDesc, sActionFilePath, sActionIconPath, true);
+
+	sActionText = "Streamdeck_translate_y_reset_to_default";
+	sActionDesc = "Reset translate Y to default Value";
+	sActionFilePath = String(oCurrentDirectory.filePath('streamdeck_translate_y_reset_to_default.dsa'));
+	sActionIconPath = String(oCurrentDirectory.filePath('reset.png'));
+	sActionName = createCustomAction(sActionText, sActionDesc, sActionFilePath, sActionIconPath, true);
+
+	// Z Rotate
 	sActionText = "Streamdeck_rotate_z_minus";
 	sActionDesc = "Negatively rotate Z";
 	sActionFilePath = String(oCurrentDirectory.filePath('streamdeck_rotate_z_minus.dsa'));
@@ -213,6 +251,25 @@
 	sActionText = "Streamdeck_scale_z_reset_to_default";
 	sActionDesc = "Reset scale Z to default Value";
 	sActionFilePath = String(oCurrentDirectory.filePath('streamdeck_scale_z_reset_to_default.dsa'));
+	sActionIconPath = String(oCurrentDirectory.filePath('reset.png'));
+	sActionName = createCustomAction(sActionText, sActionDesc, sActionFilePath, sActionIconPath, true);
+
+	// Z Translate
+	sActionText = "Streamdeck_translate_z_minus";
+	sActionDesc = "Negatively translate Z";
+	sActionFilePath = String(oCurrentDirectory.filePath('streamdeck_translate_z_minus.dsa'));
+	sActionIconPath = String(oCurrentDirectory.filePath('minus.png'));
+	sActionName = createCustomAction(sActionText, sActionDesc, sActionFilePath, sActionIconPath, true);
+
+	sActionText = "Streamdeck_translate_z_plus";
+	sActionDesc = "Positively translate Z";
+	sActionFilePath = String(oCurrentDirectory.filePath('streamdeck_translate_z_plus.dsa'));
+	sActionIconPath = String(oCurrentDirectory.filePath('plus.png'));
+	sActionName = createCustomAction(sActionText, sActionDesc, sActionFilePath, sActionIconPath, true);
+
+	sActionText = "Streamdeck_translate_z_reset_to_default";
+	sActionDesc = "Reset translate Z to default Value";
+	sActionFilePath = String(oCurrentDirectory.filePath('streamdeck_translate_z_reset_to_default.dsa'));
 	sActionIconPath = String(oCurrentDirectory.filePath('reset.png'));
 	sActionName = createCustomAction(sActionText, sActionDesc, sActionFilePath, sActionIconPath, true);
 })();

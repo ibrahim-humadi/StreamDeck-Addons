@@ -1,0 +1,6 @@
+// DAZ Studio version 4.21.0.5 filetype DAZ Script
+(function(){	
+	var oCurrentNode = Scene.getPrimarySelection();
+	var oBend = oCurrentNode.findProperty("YTranslate");
+	oBend.setValue(oBend.getDefaultValue());	
+})();
