@@ -102,7 +102,7 @@
 	var oCurrentDirectory = new DzDir(new DzFileInfo(getScriptFileName()).path());
 	var sFilePath = oCurrentDirectory.filePath('streamdeck_rotate_x_minus.dsa');
 	
-	// X
+	// X Rotate
 	var sActionText = "Streamdeck_rotate_x_minus";
 	var sActionDesc = "Negatively rotate X";
 	var sActionFilePath = String(oCurrentDirectory.filePath('streamdeck_rotate_x_minus.dsa'));
@@ -118,6 +118,25 @@
 	sActionText = "Streamdeck_rotate_x_reset_to_default";
 	sActionDesc = "Reset rotate X to default Value";
 	sActionFilePath = String(oCurrentDirectory.filePath('streamdeck_rotate_x_reset_to_default.dsa'));
+	sActionIconPath = String(oCurrentDirectory.filePath('reset.png'));
+	sActionName = createCustomAction(sActionText, sActionDesc, sActionFilePath, sActionIconPath, true);
+
+	// X Scale
+	sActionText = "Streamdeck_scale_x_minus";
+	sActionDesc = "Negatively scale X";
+	sActionFilePath = String(oCurrentDirectory.filePath('streamdeck_scale_x_minus.dsa'));
+	sActionIconPath = String(oCurrentDirectory.filePath('minus.png'));
+	sActionName = createCustomAction(sActionText, sActionDesc, sActionFilePath, sActionIconPath, true);
+
+	sActionText = "Streamdeck_scale_x_plus";
+	sActionDesc = "Positively scale X";
+	sActionFilePath = String(oCurrentDirectory.filePath('streamdeck_scale_x_plus.dsa'));
+	sActionIconPath = String(oCurrentDirectory.filePath('plus.png'));
+	sActionName = createCustomAction(sActionText, sActionDesc, sActionFilePath, sActionIconPath, true);
+
+	sActionText = "Streamdeck_scale_x_reset_to_default";
+	sActionDesc = "Reset scale X to default Value";
+	sActionFilePath = String(oCurrentDirectory.filePath('streamdeck_scale_x_reset_to_default.dsa'));
 	sActionIconPath = String(oCurrentDirectory.filePath('reset.png'));
 	sActionName = createCustomAction(sActionText, sActionDesc, sActionFilePath, sActionIconPath, true);
 
@@ -140,6 +159,25 @@
 	sActionIconPath = String(oCurrentDirectory.filePath('reset.png'));
 	sActionName = createCustomAction(sActionText, sActionDesc, sActionFilePath, sActionIconPath, true);
 
+	// Y Scale
+	sActionText = "Streamdeck_scale_y_minus";
+	sActionDesc = "Negatively scale Y";
+	sActionFilePath = String(oCurrentDirectory.filePath('streamdeck_scale_y_minus.dsa'));
+	sActionIconPath = String(oCurrentDirectory.filePath('minus.png'));
+	sActionName = createCustomAction(sActionText, sActionDesc, sActionFilePath, sActionIconPath, true);
+
+	sActionText = "Streamdeck_scale_y_plus";
+	sActionDesc = "Positively scale Y";
+	sActionFilePath = String(oCurrentDirectory.filePath('streamdeck_scale_y_plus.dsa'));
+	sActionIconPath = String(oCurrentDirectory.filePath('plus.png'));
+	sActionName = createCustomAction(sActionText, sActionDesc, sActionFilePath, sActionIconPath, true);
+
+	sActionText = "Streamdeck_scale_y_reset_to_default";
+	sActionDesc = "Reset scale Y to default Value";
+	sActionFilePath = String(oCurrentDirectory.filePath('streamdeck_scale_y_reset_to_default.dsa'));
+	sActionIconPath = String(oCurrentDirectory.filePath('reset.png'));
+	sActionName = createCustomAction(sActionText, sActionDesc, sActionFilePath, sActionIconPath, true);
+
 	// Z	
 	sActionText = "Streamdeck_rotate_z_minus";
 	sActionDesc = "Negatively rotate Z";
@@ -156,6 +194,25 @@
 	sActionText = "Streamdeck_rotate_z_reset_to_default";
 	sActionDesc = "Reset rotate Z to default Value";
 	sActionFilePath = String(oCurrentDirectory.filePath('streamdeck_rotate_z_reset_to_default.dsa'));
+	sActionIconPath = String(oCurrentDirectory.filePath('reset.png'));
+	sActionName = createCustomAction(sActionText, sActionDesc, sActionFilePath, sActionIconPath, true);
+
+	// Z Scale
+	sActionText = "Streamdeck_scale_z_minus";
+	sActionDesc = "Negatively scale Z";
+	sActionFilePath = String(oCurrentDirectory.filePath('streamdeck_scale_z_minus.dsa'));
+	sActionIconPath = String(oCurrentDirectory.filePath('minus.png'));
+	sActionName = createCustomAction(sActionText, sActionDesc, sActionFilePath, sActionIconPath, true);
+
+	sActionText = "Streamdeck_scale_z_plus";
+	sActionDesc = "Positively scale Z";
+	sActionFilePath = String(oCurrentDirectory.filePath('streamdeck_scale_z_plus.dsa'));
+	sActionIconPath = String(oCurrentDirectory.filePath('plus.png'));
+	sActionName = createCustomAction(sActionText, sActionDesc, sActionFilePath, sActionIconPath, true);
+
+	sActionText = "Streamdeck_scale_z_reset_to_default";
+	sActionDesc = "Reset scale Z to default Value";
+	sActionFilePath = String(oCurrentDirectory.filePath('streamdeck_scale_z_reset_to_default.dsa'));
 	sActionIconPath = String(oCurrentDirectory.filePath('reset.png'));
 	sActionName = createCustomAction(sActionText, sActionDesc, sActionFilePath, sActionIconPath, true);
 })();
