@@ -1,0 +1,23 @@
+// DAZ Studio version 4.22.0.1 filetype DAZ Script
+
+(function(){
+	var currentNode = Scene.getPrimarySelection();
+	var props = [];
+	var xTrans = currentNode.findProperty("XTranslate");
+	var yTrans = currentNode.findProperty("YTranslate");
+	var zTrans = currentNode.findProperty("ZTranslate");	
+	var xRot = currentNode.findProperty("XRotate");
+	var yRot = currentNode.findProperty("YRotate");
+	var zRot = currentNode.findProperty("ZRotate")
+	var xScal = currentNode.findProperty("XScale");
+	var yScal = currentNode.findProperty("YScale");
+	var zScal = currentNode.findProperty("ZScale");
+	props.push.apply(props,[xTrans,yTrans,zTrans,xRot,yRot,zRot,xScal,yScal,zScal]);
+	
+	for (var i = 0; i < props.length; i++) {
+		var currentSens = props[i].getSensitivity();
+		props[i].setSensitivity(currentSens - 0.25);		
+	}
+	
+	App.statusLine(xTrans.getSensitivity());
+})();
